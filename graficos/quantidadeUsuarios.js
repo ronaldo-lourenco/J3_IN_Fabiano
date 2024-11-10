@@ -13,7 +13,7 @@ async function quantidadeUsuarios() {
     const quantidadedeUsuarios = [dados.youtube,
     dados.facebook,
     dados.instagram
-]   
+    ]   
     
     var data = [
         {
