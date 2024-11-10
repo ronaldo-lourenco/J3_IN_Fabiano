@@ -20,12 +20,23 @@ async function quantidadeUsuarios() {
             values: [dados.youtube,dados.facebook,dados.instagram],
             labels: ["Youtube", "Facebook", "Instagram"],
             type: 'pie'
-           }
+         }
     ]
-
+    
     var layout = {
         plot_bgcolor: getCSS('--bg-color'),
         paper_bgcolor: getCSS('--bg-color'),
+        legend: {
+            x: 0.7, //posição da legenda em "x"
+            y: 0.5, //posição da legenda em "y"
+            font: {
+              size: 36, // Aumente esse valor para aumentar o tamanho da fonte
+              // color: 'darkblue', //para trocar a cor do texto
+              // family: 'Arial', //para trocar o tipo de letra
+              // bold: true //para destacar o texto
+            }
+          },
+        showlegend: true,      
         title: {
             text: "Redes sociais utilizadas pelos estudantes",
             x: 0,
@@ -34,28 +45,10 @@ async function quantidadeUsuarios() {
                 family: getCSS('--font'),
                 size: 30
             }
-        },
-
-            xaxis: {
-            tickfont: tickConfig,
-            title: {
-                text: "Nome das redes sociais",
-                font: {
-                    color: getCSS('--secundary-color')
-                }
-            }
-        },
-        yaxis: {
-            tickfont: tickConfig,
-            title: {
-                text: "Usuários ativos",
-                font: {
-                    color: getCSS('--secundary-color')
-                }
-            }
         }
-    }
-    
+}
+   
+  
     const grafico = document.createElement('div')
     grafico.className = 'grafico'
     document.getElementById('graficos-container').appendChild(grafico)
